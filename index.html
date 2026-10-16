@@ -5,37 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#17385f">
   <meta name="description" content="Baxrul Culuum Education Management System">
+
   <link rel="manifest" href="./manifest.json">
-  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
-  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="./icon-192.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="./apple-touch-icon.png"
+  >
+
   <title>Baxrul Culuum EMS</title>
+
   <style>
-    :root { color-scheme: light; --navy:#17385f; --green:#178b25; --orange:#f59d2a; }
-    * { box-sizing:border-box; }
-    body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-      padding:24px; font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-      background:#f2f5f9; color:#17385f; }
-    main { width:min(100%,520px); background:#fff; border-radius:22px; padding:28px;
-      text-align:center; box-shadow:0 8px 30px rgba(10,35,65,.12); }
-    img { width:min(58vw,210px); height:auto; object-fit:contain; }
-    h1 { margin:18px 0 8px; font-size:clamp(22px,5vw,30px); }
-    p { line-height:1.55; color:#53657b; }
-    a.button { display:block; margin-top:22px; padding:15px 18px; border-radius:12px;
-      background:var(--navy); color:#fff; text-decoration:none; font-weight:700; }
-    .note { font-size:13px; margin-top:18px; }
+    :root {
+      color-scheme: light;
+      --navy: #17385f;
+      --green: #178b25;
+      --orange: #f59d2a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #f2f5f9;
+      color: #17385f;
+    }
+
+    main {
+      width: min(100%, 520px);
+      background: #fff;
+      border-radius: 22px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(10, 35, 65, .12);
+    }
+
+    img {
+      width: min(58vw, 210px);
+      height: auto;
+      object-fit: contain;
+    }
+
+    h1 {
+      margin: 18px 0 8px;
+      font-size: clamp(22px, 5vw, 30px);
+    }
+
+    p {
+      line-height: 1.55;
+      color: #53657b;
+    }
+
+    a.button {
+      display: block;
+      margin-top: 22px;
+      padding: 15px 18px;
+      border-radius: 12px;
+      background: var(--navy);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a.button:hover {
+      background: #102b4a;
+    }
+
+    .note {
+      font-size: 13px;
+      margin-top: 18px;
+    }
   </style>
 </head>
+
 <body>
   <main>
-    <img src="./icons/icon-512.png" alt="Astaanta Mu'asasada Baxrul Culuum">
+    <img
+      src="./icon-512.png"
+      alt="Astaanta Mu'asasada Baxrul Culuum"
+    >
+
     <h1>Baxrul Culuum EMS</h1>
-    <p>Nidaamka maamulka waxbarashada ee Mu’asasada Baxrul Culuum.</p>
-    <a class="button" href="https://script.google.com/macros/s/AKfycbxr60jtT9I2R5kOstPKpDWsdITqo93qunmojXNSITcbWTwCSynFLg71-I75kRi-msjS/exec" rel="noopener">Fur BCEMS</a>
-    <p class="note">Tani waa bogga rakibidda/launcher-ka. Xogta iyo shaqooyinka BCEMS waxay weli ku jiraan Google Apps Script.</p>
+
+    <p>
+      Nidaamka maamulka waxbarashada ee Mu’asasada Baxrul Culuum.
+    </p>
+
+    <a
+      class="button"
+      href="https://script.google.com/macros/s/AKfycbxr60jtT9I2R5kOstPKpDWsdITqo93qunmojXNSITcbWTwCSynFLg71-I75kRi-msjS/exec"
+      rel="noopener"
+    >
+      Fur BCEMS
+    </a>
+
+    <p class="note">
+      Tani waa bogga rakibidda/launcher-ka.
+      Xogta iyo shaqooyinka BCEMS waxay weli ku jiraan
+      Google Apps Script.
+    </p>
   </main>
+
   <script>
     if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(console.error));
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("./sw.js")
+          .catch(error => {
+            console.error(
+              "Service Worker registration failed:",
+              error
+            );
+          });
+      });
     }
   </script>
 </body>
