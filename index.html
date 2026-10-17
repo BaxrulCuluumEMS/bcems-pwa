@@ -43,7 +43,7 @@
       padding: 24px;
       font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
       background: #f2f5f9;
-      color: #17385f;
+      color: var(--navy);
     }
 
     main {
@@ -56,9 +56,11 @@
     }
 
     img {
+      display: block;
       width: min(58vw, 210px);
       height: auto;
       object-fit: contain;
+      margin: 0 auto;
     }
 
     h1 {
@@ -80,10 +82,21 @@
       color: #fff;
       text-decoration: none;
       font-weight: 700;
+      transition: background .15s ease, opacity .15s ease;
     }
 
     a.button:hover {
       background: #102b4a;
+    }
+
+    a.button:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 3px;
+    }
+
+    a.button.loading {
+      opacity: .85;
+      cursor: wait;
     }
 
     .note {
@@ -98,6 +111,9 @@
     <img
       src="./icon-512.png"
       alt="Astaanta Mu'asasada Baxrul Culuum"
+      width="512"
+      height="512"
+      fetchpriority="high"
     >
 
     <h1>Baxrul Culuum EMS</h1>
@@ -106,8 +122,12 @@
       Nidaamka maamulka waxbarashada ee Mu’asasada Baxrul Culuum.
     </p>
 
-   <a class="button" href="https://script.google.com/macros/s/AKfycbxr60jtT9I2R5kOstPKpDWsdlTqo93qunmojXNSlTcbWTwCSynFLg71-I75kRi-msjS/exec" rel="noopener">Fur BCEMS</a>
-     
+    <a
+      class="button"
+      id="openBCEMS"
+      href="https://script.google.com/macros/s/AKfycbxr60jtT9I2R5kOstPKpDWsdlTqo93qunmojXNSlTcbWTwCSynFLg71-I75kRi-msjS/exec"
+      rel="noopener"
+    >Fur BCEMS</a>
 
     <p class="note">
       Tani waa bogga rakibidda/launcher-ka.
@@ -117,6 +137,18 @@
   </main>
 
   <script>
+    (() => {
+      const openButton = document.getElementById("openBCEMS");
+
+      if (!openButton) return;
+
+      openButton.addEventListener("click", () => {
+        openButton.textContent = "⏳ BCEMS waa la furayaa...";
+        openButton.classList.add("loading");
+        openButton.setAttribute("aria-busy", "true");
+      });
+    })();
+
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker
