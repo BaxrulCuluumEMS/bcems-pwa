@@ -5,143 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#17385f">
   <meta name="description" content="Baxrul Culuum Education Management System">
-
   <link rel="manifest" href="./manifest.json">
-
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="192x192"
-    href="./icon-192.png"
-  >
-
-  <link
-    rel="apple-touch-icon"
-    href="./apple-touch-icon.png"
-  >
-
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
   <title>Baxrul Culuum EMS</title>
-
   <style>
-    :root {
-      color-scheme: light;
-      --navy: #17385f;
-      --green: #178b25;
-      --orange: #f59d2a;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      background: #f2f5f9;
-      color: var(--navy);
-    }
-
-    main {
-      width: min(100%, 520px);
-      background: #fff;
-      border-radius: 22px;
-      padding: 28px;
-      text-align: center;
-      box-shadow: 0 8px 30px rgba(10, 35, 65, .12);
-    }
-
-    img {
-      display: block;
-      width: min(58vw, 210px);
-      height: auto;
-      object-fit: contain;
-      margin: 0 auto;
-    }
-
-    h1 {
-      margin: 18px 0 8px;
-      font-size: clamp(22px, 5vw, 30px);
-    }
-
-    p {
-      line-height: 1.55;
-      color: #53657b;
-    }
-
-    a.button {
-      display: block;
-      margin-top: 22px;
-      padding: 15px 18px;
-      border-radius: 12px;
-      background: var(--navy);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      transition: background .15s ease, opacity .15s ease;
-    }
-
-    a.button:hover {
-      background: #102b4a;
-    }
-
-    a.button:focus-visible {
-      outline: 3px solid var(--orange);
-      outline-offset: 3px;
-    }
-
-    a.button.loading {
-      opacity: .85;
-      cursor: wait;
-    }
-
-    .note {
-      font-size: 13px;
-      margin-top: 18px;
-    }
+    :root{color-scheme:light;--navy:#17385f;--green:#178b25;--orange:#f59d2a}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#f2f5f9;color:var(--navy)}
+    main{width:min(100%,520px);background:#fff;border-radius:22px;padding:28px;text-align:center;box-shadow:0 8px 30px rgba(10,35,65,.12)}
+    img{display:block;width:min(58vw,210px);height:auto;object-fit:contain;margin:0 auto}
+    h1{margin:18px 0 8px;font-size:clamp(22px,5vw,30px)}
+    p{line-height:1.55;color:#53657b}
+    a.button{display:block;margin-top:22px;padding:15px 18px;border-radius:12px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;transition:background .15s ease,opacity .15s ease}
+    a.button:hover{background:#102b4a}
+    a.button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+    a.button.loading{opacity:.85;cursor:wait}
+    .note{font-size:13px;margin-top:18px}
   </style>
 </head>
-
 <body>
   <main>
-    <img
-      src="./icon-512.png"
-      alt="Astaanta Mu'asasada Baxrul Culuum"
-      width="512"
-      height="512"
-      fetchpriority="high"
-    >
-
+    <img src="./icon-512.png" alt="Astaanta Mu'asasada Baxrul Culuum" width="512" height="512" fetchpriority="high">
     <h1>Baxrul Culuum EMS</h1>
-
-    <p>
-      Nidaamka maamulka waxbarashada ee Mu’asasada Baxrul Culuum.
-    </p>
-
-    <a
-      class="button"
-      id="openBCEMS"
-      href="https://script.google.com/macros/s/AKfycbxr60jtT9I2R5kOstPKpDWsdlTqo93qunmojXNSlTcbWTwCSynFLg71-I75kRi-msjS/exec"
-      rel="noopener"
-    >Fur BCEMS</a>
-
-    <p class="note">
-      Tani waa bogga rakibidda/launcher-ka.
-      Xogta iyo shaqooyinka BCEMS waxay weli ku jiraan
-      Google Apps Script.
-    </p>
+    <p>Nidaamka maamulka waxbarashada ee Mu’asasada Baxrul Culuum.</p>
+    <a class="button" id="openBCEMS"
+       href="https://script.google.com/macros/s/AKfycbzuXfgTwXpbft1RbBiiTKIkYFGQuCpHyLx3OB7MOljwhh1mhAoyu484E24lmpqMCIxT/exec"
+       rel="noopener">Fur BCEMS</a>
+    <p class="note">Tani waa bogga rakibidda/launcher-ka. Xogta iyo shaqooyinka BCEMS waxay ku jiraan Google Apps Script.</p>
   </main>
-
   <script>
     (() => {
       const openButton = document.getElementById("openBCEMS");
-
       if (!openButton) return;
-
       openButton.addEventListener("click", () => {
         openButton.textContent = "⏳ BCEMS waa la furayaa...";
         openButton.classList.add("loading");
@@ -149,16 +45,17 @@
       });
     })();
 
+    // Browser-ka ku dhiirrigeli inuu hubiyo nooca cusub ee Service Worker-ka.
     if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker
-          .register("./sw.js")
-          .catch(error => {
-            console.error(
-              "Service Worker registration failed:",
-              error
-            );
+      window.addEventListener("load", async () => {
+        try {
+          const registration = await navigator.serviceWorker.register("./sw.js", {
+            updateViaCache: "none"
           });
+          await registration.update();
+        } catch (error) {
+          console.error("Service Worker update failed:", error);
+        }
       });
     }
   </script>
